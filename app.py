@@ -252,12 +252,6 @@ def generate_report():
         ("57055221400", "Dr CHANDRA J", "https://scholar.google.com/citations?user=bn6WQUoAAAAJ"),
         ("59256484700", "Dr CYNTHIA T", "https://scholar.google.com/citations?hl=en&user=ThELNO0AAAAJ"),
         ("57162822500", "Dr DEEPA V JOSE", "https://scholar.google.co.in/citations?user=ryhyx4IAAAAJ&hl=en"),
-        ("57205027677", "FABIOLA HAZEL POHRMEN", "https://scholar.google.com/citations?user=prcv4fAAAAAJ&hl=en&oi=ao"),
-        ("57192668092", "Gobi Ramasamy", "https://scholar.google.com/citations?user=eu_o414AAAAJ&hl=en"),
-        ("55811681700", "Helen k Joy", "https://scholar.google.com/citations?hl=en&user=uZXv4XIAAAAJ"),
-        ("57205128308", "Hubert Shanthan", "https://scholar.google.com/citations?user=Cf2I4OoAAAAJ&hl=en"),
-        ("57789387000", "R Kavitha", "https://scholar.google.com/citations?hl=en&user=Li0r8uMAAAAJ"),
-        ("35069671200", "V.B.KIRUBANAND", "https://scholar.google.co.in/citations?user=FlLJ1SYAAAAJ&hl=en")
     ]
 
     # Handle fetching Google Scholar paper details
