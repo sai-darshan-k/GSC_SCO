@@ -390,6 +390,9 @@ h2 {
     <div id="downloadButtonContainer" class="hidden">
         <button id="downloadButton" class="download-btn">Download XLSX</button>
     </div>
+    <div id="loadingIndicator" style="display: none; text-align: center; margin-top: 20px;">
+        <p>Loading... Please wait</p>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
     <script>
     document.getElementById('generateButton').addEventListener('click', function () {
@@ -398,6 +401,7 @@ h2 {
     const googleScholarOnlyContainer = document.getElementById('googleScholarOnlyContainer');
     const paperDetailsContainer = document.getElementById('paperDetailsContainer');
     const paperDetailsScopusContainer = document.getElementById('paperDetailsScopusContainer');
+    const loadingIndicator = document.getElementById('loadingIndicator');
     const resultsTableBody = document.getElementById('resultsTable').getElementsByTagName('tbody')[0];
     const googleScholarOnlyTableBody = document.getElementById('googleScholarOnlyTable').getElementsByTagName('tbody')[0];
     const paperDetailsTableBody = document.getElementById('paperDetailsTable').getElementsByTagName('tbody')[0];
@@ -415,6 +419,16 @@ h2 {
     paperDetailsContainer.classList.add('hidden');
     paperDetailsScopusContainer.classList.add('hidden');
 
+    [resultContainer, googleScholarOnlyContainer, paperDetailsContainer, paperDetailsScopusContainer].forEach(container => {
+        container.classList.add('hidden');
+        if (container.getElementsByTagName('tbody')[0]) {
+            container.getElementsByTagName('tbody')[0].innerHTML = '';
+        }
+    });
+
+    // Show loading indicator
+    loadingIndicator.style.display = 'block';
+
     // Fetch data from the server
     fetch('/generate_report', {
         method: 'POST',
@@ -426,6 +440,7 @@ h2 {
     .then(response => response.json())
     .then(data => {
             const totalAuthors = data.length;
+            loadingIndicator.style.display = 'none';
 
             if (source === 'average') {
                 const authorsAverages = data.map(author => {
