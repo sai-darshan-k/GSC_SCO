@@ -260,38 +260,8 @@ def generate_report():
         ("35069671200", "V.B.KIRUBANAND", "https://scholar.google.co.in/citations?user=FlLJ1SYAAAAJ&hl=en"),
         ("35332112400", "Dr. MANJUNATHA HIREMATH", "https://scholar.google.co.in/citations?user=AIdTGncAAAAJ&hl=en"),
         ("58529182900", "Dr Mohana Priya T", "https://scholar.google.com/citations?user=XPjU9AIAAAAJ&hl=en&authuser=1"),
-        ("57193578932", "Nismon Rio Robert", "https://scholar.google.co.in/citations?hl=en&user=Z34wmvMAAAAJ"),
-        ("57212476297", "Dr. NISHA VARGHESE", "https://scholar.google.com/citations?user=vGJxAzEAAAAJ&hl=en"),
-        ("57201949000", "Dr. Neha Singhal", "https://scholar.google.com/citations?user=hlTGb-0AAAAJ&hl=en"),
-        ("55263618900", "Dr. Nizar Banu P K", "https://scholar.google.co.in/citations?user=hC5psv4AAAAJ"),
-        ("58244012600", "Peter Augustin D", "https://scholar.google.com/citations?user=cE0jxPcAAAAJ&hl=en"),
-        ("57200798153", "Prabu P", "https://scholar.google.com/citations?user=GYjXshwAAAAJ"),
-        ("59010451200", "Rajesh Kanna R", "https://scholar.google.com/citations?hl=en&user=HKK_hlsAAAAJ"),
-        ("57201030358", "Dr.B.RAMAMURTHY", "https://scholar.google.co.in/citations?user=qIFXtnYAAAAJ&hl=en"),
-        ("57211135848", "Resmi K R", "https://scholar.google.com/citations?hl=en&user=FmtW9kIAAAAJ"),
-        ("56708741500", "Rohini V", "https://scholar.google.com/citations?user=_89sYcIAAAAJ&hl=en&oi=ao"),
-        ("57209182380", "Sagaya Aurelia", "https://scholar.google.com/citations?user=qVkPhiAAAAAJ&hl=en"),
-        ("56168895700", "J Sandeep", "https://scholar.google.co.in/citations?user=Hj3_OtwAAAAJ&hl=en"),
-        ("57219413559", "Dr. Sangeetha G", "https://scholar.google.co.in/citations?user=kNdafyoAAAAJ&hl=en"),
-        ("-", "Saravanakumar K", "https://scholar.google.com/citations?hl=en&user=TIywHAYAAAAJ"),#clarification needed
-        ("57203436758", "Shoney Sebastian", "https://scholar.google.co.in/citations?user=Mz8UAz8AAAAJ&hl=en"),
-        ("57387061900", "SMERA C 1942049", "https://scholar.google.com/citations?user=5DpheNgAAAAJ&hl=en&authuser=1"),
-        ("57213312387", "Smitha Vinod", "https://scholar.google.co.in/citations?user=RHYAEsoAAAAJ&hl=en"),
-        ("56373322500", "Somnath Sinha", "https://scholar.google.com/citations?user=ORmwBEQAAAAJ&hl=en&authuser=1"),
-        ("56703307000", "Sreeja CS", "https://scholar.google.com/citations?user=6_DGZukAAAAJ&hl=en&oi=ao"),
-        ("57216788513", "Sridevi Rajasekaran", "https://scholar.google.com/citations?user=eiAIuOMAAAAJ&hl=en"),
-        ("57189507074", "Dr Sudhakar T", "https://scholar.google.com/citations?hl=en&user=IkDN14UAAAAJ&view_op=list_works&sortby=pubdate"),
-        (" ", "Dr Suresh. K", "https://scholar.google.com/citations?user=i4ZqOsMAAAAJ&hl=en"),
-        ("57159691300", "THIRUNAVUKKARASU V", "https://scholar.google.co.in/citations?user=TbJmY8IAAAAJ&hl=en"),
-        ("57190966782", "Vaidhehi V", "https://scholar.google.com/citations?user=xfJLs0UAAAAJ&hl=en"),
-        ("58873437100 ", "Dr Vijay Arputharaj J", "https://scholar.google.com/citations?hl=en&user=Ac5HrokAAAAJ"),
-        ("57210956020", "Dr.Vineetha KR", "https://scholar.google.com/citations?user=-M-lmeUAAAAJ&hl=en"),
-        ("57560038400", "S Chanti", "https://scholar.google.com/citations?hl=en&authuser=1&user=B8IlRMEAAAAJ"),
-        ("57208210764", "Dr SURABHI SAXENA", "https://scholar.google.co.in/citations?user=0bjilf8AAAAJ&hl=en"),
-        ("57195638295", "Dr. CYNTHIA C", ""),#clarification needed
-        ("57188976203", "Bhuvana Jayabalan", "https://scholar.google.com/citations?user=933fkHwAAAAJ"),
-        ("57216241780", "Manasa Kulkarni", "https://scholar.google.com/citations?user=-W87fKwAAAAJ&hl=en"),
-        ("57209855653", "New Begin M", "https://scholar.google.com/citations?hl=en&user=zp7srGsAAAAJ&view_op=list_works&authuser=1&gmla=AC6lMd9JmscOmxzs13XJXmG0F9ACK6jOOj7DEkYoUdCDTfhLaMqAW67nUbE6-gL-_39AZHtvXOOCmgIgXzMjrYMc")
+        ("57193578932", "Nismon Rio Robert", "https://scholar.google.co.in/citations?hl=en&user=Z34wmvMAAAAJ")
+
     ]
 
     # Handle fetching Google Scholar paper details
