@@ -440,6 +440,7 @@ h2 {
     .then(response => response.json())
     .then(data => {
             const totalAuthors = data.length;
+            
             loadingIndicator.style.display = 'none';
 
             if (source === 'average') {
