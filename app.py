@@ -1,21 +1,11 @@
 from flask import Flask, request, jsonify, render_template
 import json
 import requests
-from requests.exceptions import RequestException
 import asyncio
 import aiohttp
 from bs4 import BeautifulSoup
-import logging
-import time
-from flask_caching import Cache
 
 app = Flask(__name__)
-
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-
-# Configure caching
-cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 # Load your API key from config.json
 with open('config.json') as config_file:
@@ -241,32 +231,14 @@ def fetch_google_scholar_papers(author_url):
     
     return papers
 
-# Retry function with exponential backoff
-def fetch_with_retry(url, max_retries=3):
-    for attempt in range(max_retries):
-        try:
-            logging.info(f"Attempting to fetch data from {url}")
-            response = requests.get(url, timeout=10)
-            response.raise_for_status()
-            logging.info(f"Successfully fetched data from {url}")
-            return response.json()
-        except RequestException as e:
-            logging.error(f"Error fetching data from {url}: {str(e)}")
-            if attempt == max_retries - 1:
-                raise
-            wait_time = 2 ** attempt
-            logging.info(f"Retrying in {wait_time} seconds...")
-            time.sleep(wait_time)
 
 @app.route('/')
 def index():
     return render_template('index.html')
-
 @app.route('/generate_report', methods=['POST'])
 def generate_report():
     data = request.json
     source = data.get('source')
-    logging.info(f"Generating report for source: {source}")
 
     # List of authors with Scopus IDs and Google Scholar links
     author_ids = [
@@ -279,14 +251,8 @@ def generate_report():
         ("57055221400", "Dr CHANDRA J", "https://scholar.google.com/citations?user=bn6WQUoAAAAJ"),
         ("59256484700", "Dr CYNTHIA T", "https://scholar.google.com/citations?hl=en&user=ThELNO0AAAAJ"),
         ("57162822500", "Dr DEEPA V JOSE", "https://scholar.google.co.in/citations?user=ryhyx4IAAAAJ&hl=en"),
-        ("57205027677", "FABIOLA HAZEL POHRMEN", "https://scholar.google.com/citations?user=prcv4fAAAAAJ&hl=en&oi=ao"),
-        ("57192668092", "Gobi Ramasamy", "https://scholar.google.com/citations?user=eu_o414AAAAJ&hl=en"),
-        ("55811681700", "Helen k Joy", "https://scholar.google.com/citations?hl=en&user=uZXv4XIAAAAJ"),
-        ("57205128308", "Hubert Shanthan", "https://scholar.google.com/citations?user=Cf2I4OoAAAAJ&hl=en"),
-        ("57789387000", "R Kavitha", "https://scholar.google.com/citations?hl=en&user=Li0r8uMAAAAJ"),
-        ("35069671200", "V.B.KIRUBANAND", "https://scholar.google.co.in/citations?user=FlLJ1SYAAAAJ&hl=en")
+        ("57205027677", "FABIOLA HAZEL POHRMEN", "https://scholar.google.com/citations?user=prcv4fAAAAAJ&hl=en&oi=ao")
     ]
-
     # Handle fetching Google Scholar paper details
     if source == 'paperDetails':
         paper_details = []
